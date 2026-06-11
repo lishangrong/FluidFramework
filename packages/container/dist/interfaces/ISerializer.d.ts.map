@@ -1,0 +1,1 @@
+{"version":3,"file":"ISerializer.d.ts","sourceRoot":"","sources":["../../src/interfaces/ISerializer.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,MAAM,WAAW,iBAAiB;IACjC,kBAAkB;IAClB,MAAM,CAAC,KAAK,EAAE,OAAO,GAAG,UAAU,CAAC;IACnC,oBAAoB;IACpB,MAAM,CAAC,IAAI,EAAE,UAAU,GAAG,OAAO,CAAC;CAClC"}

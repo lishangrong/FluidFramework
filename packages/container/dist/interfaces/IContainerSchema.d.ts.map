@@ -1,0 +1,1 @@
+{"version":3,"file":"IContainerSchema.d.ts","sourceRoot":"","sources":["../../src/interfaces/IContainerSchema.ts"],"names":[],"mappings":"AAAA;;;GAGG;AACH,MAAM,WAAW,gBAAgB;IAChC,mCAAmC;IACnC,QAAQ,CAAC,cAAc,EAAE,MAAM,CAAC,MAAM,EAAE,MAAM,CAAC,CAAC;IAChD,yBAAyB;IACzB,QAAQ,CAAC,kBAAkB,CAAC,EAAE,SAAS,MAAM,EAAE,CAAC;CAChD"}

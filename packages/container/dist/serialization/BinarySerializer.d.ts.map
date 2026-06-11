@@ -1,0 +1,1 @@
+{"version":3,"file":"BinarySerializer.d.ts","sourceRoot":"","sources":["../../src/serialization/BinarySerializer.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,iBAAiB,EAAE,MAAM,8BAA8B,CAAC;AAItE;;;GAGG;AACH,qBAAa,gBAAiB,YAAW,iBAAiB;IACzD;;OAEG;IACH,MAAM,CAAC,KAAK,EAAE,OAAO,GAAG,UAAU;IAMlC;;OAEG;IACH,MAAM,CAAC,IAAI,EAAE,UAAU,GAAG,OAAO;CAIjC"}

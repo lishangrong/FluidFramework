@@ -1,0 +1,33 @@
+{
+  "name": "@fluid-container/core",
+  "version": "0.1.0",
+  "description": "Fluid Framework container module for data model organization, shared object hosting, and container lifecycle management",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "@vitest/coverage-v8": "^2.1.0",
+    "typescript": "~5.5.4",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
