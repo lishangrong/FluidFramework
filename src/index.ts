@@ -48,3 +48,6 @@ export { ScopeManager } from "./scope";
 export { RetryPolicy } from "./retryPolicy";
 export { FluidLoader } from "./loader";
 export type { FluidLoaderOptions } from "./loader";
+
+// Container Module
+export * from "./container/index";
