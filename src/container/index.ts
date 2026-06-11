@@ -16,11 +16,15 @@ export type {
   IDDSOperation,
   IDistributedDataStructure,
   ISnapshotEntry,
+  ITreeNode,
+  TreeNodeType,
 } from "./types";
 
 // Implementation
 export { FluidContainer } from "./container";
 export { SharedMap } from "./dds";
+export { SharedTree } from "./sharedTree";
+export { PositionReference } from "./sharedTree";
 export { BinaryReader, BinaryWriter, decodeSnapshot, encodeSnapshot } from "./binaryCodec";
 
 // Errors

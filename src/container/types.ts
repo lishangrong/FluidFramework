@@ -14,13 +14,34 @@ export interface IDDSOperation {
   /** Unique operation identifier */
   opId: string;
   /** Operation type */
-  type: "set" | "delete" | "clear";
-  /** Key affected (not present for "clear") */
+  type:
+    | "set"
+    | "delete"
+    | "clear"
+    | "tree-insert"
+    | "tree-delete"
+    | "tree-move"
+    | "tree-set-value"
+    | "tree-transaction";
+  /** Key affected (not present for "clear" or tree ops) */
   key?: string;
   /** Value set (only for "set") */
   value?: unknown;
   /** Timestamp when the operation was created */
   timestamp: number;
+
+  // ---------- Tree-specific fields ----------
+
+  /** Target node id (tree-delete, tree-move, tree-set-value) */
+  nodeId?: string;
+  /** Parent node id (tree-insert, tree-move) */
+  parentId?: string;
+  /** Child index within parent (tree-insert, tree-move) */
+  index?: number;
+  /** Node type tag (tree-insert) */
+  nodeType?: string;
+  /** Atomic child operations (tree-transaction) */
+  childOps?: IDDSOperation[];
 }
 
 /** Event types emitted by a DDS */
@@ -66,6 +87,29 @@ export interface IDistributedDataStructure {
 
   /** Dispose this DDS, releasing resources */
   dispose(): void;
+}
+
+// ============================================================
+// SharedTree Types
+// ============================================================
+
+/** Supported tree node types */
+export type TreeNodeType = "string" | "number" | "boolean" | "object" | "array" | "custom";
+
+/** Read-only view of a tree node */
+export interface ITreeNode {
+  /** Globally unique node identifier */
+  readonly nodeId: string;
+  /** Node data type */
+  readonly type: TreeNodeType;
+  /** Leaf value (null for object/array nodes) */
+  readonly value: unknown;
+  /** Parent node id, or null for the root */
+  readonly parentId: string | null;
+  /** Ordered child node ids */
+  readonly children: string[];
+  /** Extensible metadata */
+  readonly metadata: ReadonlyMap<string, unknown>;
 }
 
 // ============================================================

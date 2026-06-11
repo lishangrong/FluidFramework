@@ -8,6 +8,7 @@
 
 import { decodeSnapshot, encodeSnapshot } from "./binaryCodec";
 import { SharedMap } from "./dds";
+import { SharedTree } from "./sharedTree";
 import {
   ContainerDisposedError,
   DDSAlreadyExistsError,
@@ -33,6 +34,7 @@ import type {
 
 const DDS_FACTORIES: Record<string, (id: string) => IDistributedDataStructure> = {
   SharedMap: (id) => new SharedMap(id),
+  SharedTree: (id) => new SharedTree(id),
 };
 
 function createDDSInstance(id: string, type: string): IDistributedDataStructure {
@@ -272,8 +274,17 @@ export class FluidContainer implements IContainer {
 
     // Rebuild from snapshot entries
     for (const entry of decoded.entries) {
-      // SharedMap.fromBinary handles its own binary format
-      const dds = SharedMap.fromBinary(entry.data);
+      let dds: IDistributedDataStructure;
+      switch (entry.type) {
+        case "SharedMap":
+          dds = SharedMap.fromBinary(entry.data);
+          break;
+        case "SharedTree":
+          dds = SharedTree.fromBinary(entry.data);
+          break;
+        default:
+          throw new SchemaValidationError(`Unknown DDS type "${entry.type}" in snapshot`);
+      }
       this.wireDDS(dds);
       this.ddsMap.set(entry.id, dds);
     }
