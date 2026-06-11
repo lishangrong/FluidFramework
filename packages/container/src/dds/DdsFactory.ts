@@ -2,6 +2,7 @@ import { SharedObjectBase } from "./SharedObjectBase.js";
 import { SharedMap } from "./SharedMap.js";
 import { SharedString } from "./SharedString.js";
 import { SharedCounter } from "./SharedCounter.js";
+import { SharedTree } from "./SharedTree.js";
 import { SchemaError } from "../errors/SchemaError.js";
 import { ContainerErrorCode } from "../errors/ContainerErrorCode.js";
 import { DdsError } from "../errors/DdsError.js";
@@ -21,6 +22,7 @@ export class DdsFactory {
 		this.register(SharedMap.TYPE, (id) => new SharedMap(id));
 		this.register(SharedString.TYPE, (id) => new SharedString(id));
 		this.register(SharedCounter.TYPE, (id) => new SharedCounter(id));
+		this.register(SharedTree.TYPE, (id) => new SharedTree(id));
 	}
 
 	/**

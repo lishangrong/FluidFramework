@@ -16,6 +16,16 @@ export enum ContainerErrorCode {
 	DdsDisposed = 7004,
 	InvalidOperation = 7005,
 
+	// SharedTree 错误 (7010-7019)
+	TreeNodeNotFound = 7010,
+	TreeInvalidNodeType = 7011,
+	TreeCycleDetected = 7012,
+	TreeTransactionConflict = 7013,
+	TreeTransactionEnded = 7014,
+	TreeInvalidOperation = 7015,
+	TreeAnchorDisposed = 7016,
+	TreeCustomTypeExists = 7017,
+
 	// 快照错误 (8xxx)
 	SnapshotFailed = 8001,
 	SnapshotRestoreFailed = 8002,

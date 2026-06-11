@@ -6,7 +6,15 @@ type DdsErrorCode =
 	| ContainerErrorCode.DdsAlreadyExists
 	| ContainerErrorCode.DdsOperationFailed
 	| ContainerErrorCode.DdsDisposed
-	| ContainerErrorCode.InvalidOperation;
+	| ContainerErrorCode.InvalidOperation
+	| ContainerErrorCode.TreeNodeNotFound
+	| ContainerErrorCode.TreeInvalidNodeType
+	| ContainerErrorCode.TreeCycleDetected
+	| ContainerErrorCode.TreeTransactionConflict
+	| ContainerErrorCode.TreeTransactionEnded
+	| ContainerErrorCode.TreeInvalidOperation
+	| ContainerErrorCode.TreeAnchorDisposed
+	| ContainerErrorCode.TreeCustomTypeExists;
 
 /**
  * DDS 操作相关错误。仅 DdsOperationFailed 可重试。

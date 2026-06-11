@@ -7,6 +7,10 @@ export type {
 	ISharedMap,
 	ISharedString,
 	ISharedCounter,
+	ISharedTree,
+	ITreeNodeView,
+	ITreeAnchor,
+	ITreeTransaction,
 	IContainerEvents,
 	ISnapshotManager,
 	ISnapshotResult,
@@ -24,6 +28,8 @@ export type {
 	IResolvedUrl,
 	IEndpoints,
 } from "./interfaces/index.js";
+
+export { TreeNodeType } from "./interfaces/index.js";
 
 // Errors
 export {
@@ -52,6 +58,7 @@ export {
 	SharedMap,
 	SharedString,
 	SharedCounter,
+	SharedTree,
 	DdsFactory,
 } from "./dds/index.js";
 

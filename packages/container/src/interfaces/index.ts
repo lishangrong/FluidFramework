@@ -3,6 +3,8 @@ export type { ISharedObject, IDdsEvents, IDdsChangeEvent } from "./IDds.js";
 export type { ISharedMap } from "./ISharedMap.js";
 export type { ISharedString } from "./ISharedString.js";
 export type { ISharedCounter } from "./ISharedCounter.js";
+export type { ISharedTree, ITreeNodeView, ITreeAnchor, ITreeTransaction } from "./ISharedTree.js";
+export { TreeNodeType } from "./ISharedTree.js";
 export type { IContainerEvents } from "./IContainerEvents.js";
 export type { ISnapshotManager, ISnapshotResult } from "./ISnapshot.js";
 export type { IBinarySerializer } from "./ISerializer.js";

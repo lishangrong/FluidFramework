@@ -72,7 +72,7 @@ export abstract class SharedObjectBase
 	/**
 	 * 处理远端操作并触发变更事件。
 	 */
-	processRemoteOp(op: unknown): void {
+	processRemoteOp(op: unknown, _sequenceNumber?: number): void {
 		this.applyOp(op);
 		this.safeEmit("changed", {
 			objectId: this.id,

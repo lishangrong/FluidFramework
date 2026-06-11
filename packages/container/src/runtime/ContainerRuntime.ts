@@ -89,7 +89,7 @@ export class ContainerRuntime implements IContainerRuntime {
 		}
 		const obj = this.objects.get(contents.objectId);
 		if (obj) {
-			obj.processRemoteOp(contents.op);
+			obj.processRemoteOp(contents.op, message.sequenceNumber);
 		}
 	}
 
